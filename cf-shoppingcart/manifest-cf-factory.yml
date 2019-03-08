@@ -1,0 +1,27 @@
+---
+applications:
+- name: java-rule-sample
+  host: s0017378091trial-java-rule-sample
+  memory: 512M
+  instances: 1
+  path: app/target/java-rule-sample.jar
+  buildpack: sap_java_buildpack
+  services:
+    - java-ruleservice
+    - java-rule-sample-uaa
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+
+- name: java-rule-sample-web
+  host: s0017378091trial-java-rule-sample-web
+  path: web
+  memory: 128M
+  env:
+    TENANT_HOST_PATTERN : ^(.*)-java-rule-sample-web.cfapps.eu10.hana.ondemand.com
+    destinations: >
+      [
+        {"name":"bpmrulesruntime", "url":"https://s0017378091trial-java-rule-sample.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true},
+        {"name":"sapui5url", "url":"https://sapui5.hana.ondemand.com"}
+      ]
+  services:
+    - java-rule-sample-uaa

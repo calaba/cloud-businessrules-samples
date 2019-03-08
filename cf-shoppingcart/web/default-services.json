@@ -1,0 +1,8 @@
+{
+  "uaa": {
+    "url" : "http://sap-login.cfapps.neo.ondemand.com",
+    "clientid" : "rulesample.java",
+    "clientsecret" : "rulesamplejavaclientsecret",
+    "xsappname": "java-rule-sample"
+  }
+}

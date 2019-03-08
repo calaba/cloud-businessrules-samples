@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>rule-sample-java-parent</artifactId>
+        <groupId>com.sap.brms.samples</groupId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>java-rule-sample</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>com.sap.rule.sample.Application</start-class>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- logging support for cloud foundry -->
+
+        <dependency>
+            <groupId>com.sap.hcp.cf.logging</groupId>
+            <artifactId>cf-java-logging-support-logback</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.hcp.cf.logging</groupId>
+            <artifactId>cf-java-logging-support-servlet</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.cloudfoundry.identity</groupId>
+            <artifactId>cloudfoundry-identity-client-lib</artifactId>
+            <version>4.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.xs2.security</groupId>
+            <artifactId>security-commons</artifactId>
+            <version>0.28.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.xs2.security</groupId>
+            <artifactId>java-container-security</artifactId>
+            <version>0.28.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.xs2.security</groupId>
+            <artifactId>java-container-security-api</artifactId>
+            <version>0.28.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.security.nw.sso.linuxx86_64.opt</groupId>
+            <artifactId>sapjwt.linuxx86_64</artifactId>
+            <version>1.1.19</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.security.nw.sso.ntamd64.opt</groupId>
+            <artifactId>sapjwt.ntamd64</artifactId>
+            <version>1.1.19</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.security.nw.sso.linuxppc64.opt</groupId>
+            <artifactId>sapjwt.linuxppc64</artifactId>
+            <version>1.1.19</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.security.nw.sso.darwinintel64.opt</groupId>
+            <artifactId>sapjwt.darwinintel64</artifactId>
+            <version>1.1.19</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>repackage</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            </plugin>
+        </plugins>
+        <finalName>${project.name}</finalName>
+    </build>
+
+</project>

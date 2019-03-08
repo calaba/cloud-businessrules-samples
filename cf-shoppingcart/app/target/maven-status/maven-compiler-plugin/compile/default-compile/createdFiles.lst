@@ -1,0 +1,6 @@
+com\sap\rule\sample\security\WebSecurityConfiguration.class
+com\sap\rule\sample\Application.class
+com\sap\rule\sample\controller\RuleServiceController.class
+com\sap\rule\sample\config\RuleServiceConfig.class
+com\sap\rule\sample\security\Scope.class
+com\sap\rule\sample\controller\XSRFController.class

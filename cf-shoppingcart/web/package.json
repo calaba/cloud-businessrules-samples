@@ -1,0 +1,14 @@
+{
+  "name": "java-rule-sample-approuter",
+  "dependencies": {
+    "@sap/approuter": "^2.7.0"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter",
+    "prepareRelease": "clean-packages && npm prune --production"
+  },
+  "engines": {
+    "node": "~6.x",
+    "npm": "3.x.x"
+  }
+}

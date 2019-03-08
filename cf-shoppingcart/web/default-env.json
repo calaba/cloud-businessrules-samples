@@ -1,0 +1,4 @@
+{
+  "destinations": [ { "name": "bpmrulesruntime", "url": "http://localhost:8080", "forwardAuthToken": true }],
+  "TENANT_HOST_PATTERN": "^(.*)-localhost"
+}

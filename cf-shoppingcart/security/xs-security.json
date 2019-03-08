@@ -1,0 +1,38 @@
+{
+  "xsappname": "rule-sample-java",
+  "tenant-mode": "shared",
+  "scopes": [
+
+    {
+      "name": "$XSAPPNAME.read",
+      "description": "read"
+    },
+    {
+      "name": "$XSAPPNAME.write",
+      "description": "write"
+    },
+    {
+      "name": "$XSAPPNAME.delete",
+      "description": "delete"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "View all rules",
+      "scope-references": [
+        "$XSAPPNAME.read",
+        "uaa.user"
+      ]
+    },
+    {
+      "name": "Editor",
+      "description": "Edit and Delete rules",
+      "scope-references": [
+        "$XSAPPNAME.write",
+        "$XSAPPNAME.delete",
+        "uaa.user"
+      ]
+    }
+  ]
+}

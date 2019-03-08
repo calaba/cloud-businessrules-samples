@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "source": "^/resources/(.*)",
+	  "target": "resources/$1",
+	  "destination": "sapui5url"
+    },
+    {
+      "source": "/bpmrulesruntime/rules-service/(.*)",
+      "target": "rules-service/$1",
+      "destination": "bpmrulesruntime"
+    },
+	{
+      "source": "^/(.*)",
+      "localDir": "webapp"
+    }
+    
+  ]
+  
+}
