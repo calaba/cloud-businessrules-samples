@@ -10,6 +10,7 @@ applications:
     - java-ruleservice
     - java-rule-sample-uaa
   env:
+    JBP_CONFIG_JAVA_OPTS: '[from_environment: false, java_opts: ''-agentlib:jdwp=transport=dt_socket,address=8000,suspend=n,server=y -Xdebug -Dcom.sun.management.jmxremote= -Djava.rmi.server.hostname=localhost -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=2099 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false'']'
     SPRING_PROFILES_ACTIVE: cloud
 
 - name: java-rule-sample-web

@@ -4,7 +4,7 @@
     "@sap/approuter": "^2.7.0"
   },
   "scripts": {
-    "start": "node node_modules/@sap/approuter",
+    "start": "node --inspect node_modules/@sap/approuter",
     "prepareRelease": "clean-packages && npm prune --production"
   },
   "engines": {
